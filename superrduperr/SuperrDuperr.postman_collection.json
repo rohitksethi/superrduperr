@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "e67b76f9-a203-4237-98ff-2e992bf413b3",
+		"name": "SuperrDuperr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateTodoList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"itemlist2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				},
+				"description": "Creates an todo list"
+			},
+			"response": []
+		},
+		{
+			"name": "GetTodoListById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todolists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1"
+					]
+				},
+				"description": "Get the list of items"
+			},
+			"response": []
+		},
+		{
+			"name": "GetTodoListByInvalidId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todolists/145",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"145"
+					]
+				},
+				"description": "Get the list of items by specifying invalid id"
+			},
+			"response": []
+		},
+		{
+			"name": "GetTodoLists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/todolists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists"
+					]
+				},
+				"description": "Get all todo lists"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n            \"taskname\": \"newTask\",\r\n            \"completed\": 0,\r\n            \"softdeleted\": 0,\r\n            \"tag\": null,\r\n            \"reminder\": null\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists/1/todoitems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1",
+						"todoitems"
+					]
+				},
+				"description": "Creates an item in todo list"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n            \"id\": 1,\r\n            \"todolist_id\": 1,\r\n            \"taskname\": \"task1\",\r\n            \"completed\": 0,\r\n            \"softdeleted\": 1,\r\n            \"tag\": null,\r\n            \"reminder\": null\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists/1/todoitems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1",
+						"todoitems"
+					]
+				},
+				"description": "Deletes an item from todo list"
+			},
+			"response": []
+		},
+		{
+			"name": "RestoreItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n            \"id\": 1,\r\n            \"todolist_id\": 1,\r\n            \"taskname\": \"task1\",\r\n            \"completed\": 0,\r\n            \"softdeleted\": 0,\r\n            \"tag\": null,\r\n            \"reminder\": null\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists/1/todoitems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1",
+						"todoitems"
+					]
+				},
+				"description": "Restore item"
+			},
+			"response": []
+		},
+		{
+			"name": "MarkItemCompleted",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n            \"id\": 1,\r\n            \"todolist_id\": 1,\r\n            \"taskname\": \"task1\",\r\n            \"completed\": 1,\r\n            \"softdeleted\": 0,\r\n            \"tag\": null,\r\n            \"reminder\": null\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists/1/todoitems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1",
+						"todoitems"
+					]
+				},
+				"description": "Mark item completed"
+			},
+			"response": []
+		},
+		{
+			"name": "TagItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n            \"id\": 1,\r\n            \"todolist_id\": 1,\r\n            \"taskname\": \"task1\",\r\n            \"completed\": 1,\r\n            \"softdeleted\": 0,\r\n            \"tag\": \"suspend\",\r\n            \"reminder\": null\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists/1/todoitems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1",
+						"todoitems"
+					]
+				},
+				"description": "Tag Item"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateReminder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n            \"id\": 1,\r\n            \"todolist_id\": 1,\r\n            \"taskname\": \"task1\",\r\n            \"completed\": 0,\r\n            \"softdeleted\": 0,\r\n            \"tag\": \"\",\r\n            \"reminder\": \"2019-09-20 15:30:14.332\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/todolists/1/todoitems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todolists",
+						"1",
+						"todoitems"
+					]
+				},
+				"description": "Create Reminder"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
