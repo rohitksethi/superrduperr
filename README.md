@@ -22,12 +22,12 @@
 
 - ToDoList ->
 
-@GetMapping("/todolists") – get all todolist
-@GetMapping("/todolists/{id}") – get todolist by Id
+@GetMapping("/todolists") – get all todolist.
+@GetMapping("/todolists/{id}") – get todolist by Id.
 @PostMapping("/todolists")- post a todolist
 
 
 - ToDoItem ->
 
-@GetMapping("/todolists/{toDoListId}/todoitems") – get all todoitem by todolist Id
+@GetMapping("/todolists/{toDoListId}/todoitems") – get all todoitem by todolist Id.
 @PostMapping("/todolists/{toDoListId}/todoitems") – post todoitem by todolist Id.
